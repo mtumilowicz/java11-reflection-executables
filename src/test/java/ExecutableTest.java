@@ -40,19 +40,6 @@ public class ExecutableTest {
     }
 
     @Test
-    public void getParameterTypes() {
-        Method method = findMethod("method");
-
-        var parameters = method.getParameterTypes();
-        assertThat(parameters.length, is(3));
-
-        var parametersAsString = Arrays.toString(parameters);
-        assertThat(parametersAsString, containsString("class java.lang.String"));
-        assertThat(parametersAsString, containsString("int"));
-        assertThat(parametersAsString, containsString("class java.lang.Object"));
-    }
-
-    @Test
     public void getModifiers() {
         Method method = findMethod("method");
 
@@ -66,9 +53,22 @@ public class ExecutableTest {
 
         var typeParameters = method.getTypeParameters();
         assertThat(typeParameters.length, is(1));
-        
+
         var typeParametersAsString = Arrays.toString(typeParameters);
         assertThat(typeParametersAsString, containsString("T"));
+    }
+
+    @Test
+    public void getParameterTypes() {
+        Method method = findMethod("method");
+
+        var parameters = method.getParameterTypes();
+        assertThat(parameters.length, is(3));
+
+        var parametersAsString = Arrays.toString(parameters);
+        assertThat(parametersAsString, containsString("class java.lang.String"));
+        assertThat(parametersAsString, containsString("int"));
+        assertThat(parametersAsString, containsString("class java.lang.Object"));
     }
 
     private Method findMethod(String name) {
