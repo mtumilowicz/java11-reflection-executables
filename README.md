@@ -11,11 +11,12 @@ _Reference_: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/l
 (methods retrieving information common added/moved to this class)
 and the methods are quite self-explanatory:
     * `Parameter[] getParameters()`
-    * `getExceptionTypes()`
-    * `getModifiers()` - returns modifiers as int (https://github.com/mtumilowicz/java11-ORed-container)
-        * `Modifier.methodModifiers()` - returns possible modifiers for class
-    * `TypeVariable<Method>[] getTypeParameters()`
-    * `getParameterTypes()`
+    * `Class<?>[] getExceptionTypes()`
+    * `int getModifiers()` - returns modifiers as int (https://github.com/mtumilowicz/java11-ORed-container)
+        * `int Modifier.methodModifiers()` - returns possible modifiers for class
+    * `TypeVariable<Method>[] getTypeParameters()` - types of
+    generic method
+    * `Class<?>[] getParameterTypes()` - types of parameters
     
 # project description
 We will test 4 mentioned above methods only for a given method
