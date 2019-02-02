@@ -38,7 +38,7 @@ public class X {
 All tests are in `ExecutableTest` class
 * `getParameters`
     ```
-    Method method = findMethod("method");
+    var method = findMethod("method");
     
     var parameters = method.getParameters();
     assertThat(parameters.length, is(3));
@@ -50,7 +50,7 @@ All tests are in `ExecutableTest` class
     ```
 * `getExceptionTypes`
     ```
-    Method method = findMethod("method");
+    var method = findMethod("method");
     
     var exceptionTypes = method.getExceptionTypes();
     assertThat(exceptionTypes.length, is(2));
@@ -61,14 +61,14 @@ All tests are in `ExecutableTest` class
     ```
 * `getModifiers`
     ```
-    Method method = findMethod("method");
+    var method = findMethod("method");
     
     var parameters = method.getModifiers() & Modifier.methodModifiers();
     assertThat(Modifier.toString(parameters), is("public"));
     ```
 * `getTypeParameters`
     ```
-    Method method = findMethod("method");
+    var method = findMethod("method");
     
     var typeParameters = method.getTypeParameters();
     assertThat(typeParameters.length, is(1));
@@ -78,7 +78,7 @@ All tests are in `ExecutableTest` class
     ```
 * `getParameterTypes`
     ```
-    Method method = findMethod("method");
+    var method = findMethod("method");
     
     var parameters = method.getParameterTypes();
     assertThat(parameters.length, is(3));
