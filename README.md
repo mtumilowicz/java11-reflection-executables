@@ -24,9 +24,9 @@ to this class) and the methods are quite self-explanatory:
     that generic parameter type is replaced by `Object`
     
 # project description
-We will test 4 mentioned above methods only for a given method
-only to reduce code redundancy (for constructor tests will
-be pretty exact the same).
+We will test all mentioned above methods but only for a given method
+to reduce code redundancy (for constructor tests will
+be pretty the same).
 
 We have a simple class with a single method:
 ```
