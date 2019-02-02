@@ -10,7 +10,10 @@ _Reference_: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/l
 * `Executable` - common superclass since java 8 
 (methods retrieving information common added/moved to this class)
 and the methods are quite self-explanatory:
-    * `Parameter[] getParameters()`
+    * `Parameter[] getParameters()` - te parameter names are
+    replaced by `arg0`, `arg1`, etc. by default; if we want to
+    have actual parameter names we have to compile the source 
+    code using the `-parameters` flag
     * `Class<?>[] getExceptionTypes()`
     * `int getModifiers()` - returns modifiers as int (https://github.com/mtumilowicz/java11-ORed-container)
         * `int Modifier.methodModifiers()` - returns possible modifiers for class
