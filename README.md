@@ -26,7 +26,68 @@ We will test 4 mentioned above methods only for a given method
 only to reduce code redundancy (for constructor tests will
 be pretty exact the same).
 
+We have a simple class with a single method:
+```
+public class X {
+    public <T> String method(String first, int second, T type) throws IllegalArgumentException, IOException {
+        return "";
+    }
+}
+```
 
+All tests are in `ExecutableTest` class
+* `getParameters`
+    ```
+    Method method = findMethod("method");
+    
+    var parameters = method.getParameters();
+    assertThat(parameters.length, is(3));
+    
+    var parametersAsString = Arrays.toString(parameters);
+    assertThat(parametersAsString, containsString("java.lang.String arg0"));
+    assertThat(parametersAsString, containsString("int arg1"));
+    assertThat(parametersAsString, containsString("T arg2"));
+    ```
+* `getExceptionTypes`
+    ```
+    Method method = findMethod("method");
+    
+    var exceptionTypes = method.getExceptionTypes();
+    assertThat(exceptionTypes.length, is(2));
+    
+    var exceptionTypesAsString = Arrays.toString(exceptionTypes);
+    assertThat(exceptionTypesAsString, containsString("class java.lang.IllegalArgumentException"));
+    assertThat(exceptionTypesAsString, containsString("class java.io.IOException"));
+    ```
+* `getModifiers`
+    ```
+    Method method = findMethod("method");
+    
+    var parameters = method.getModifiers() & Modifier.methodModifiers();
+    assertThat(Modifier.toString(parameters), is("public"));
+    ```
+* `getTypeParameters`
+    ```
+    Method method = findMethod("method");
+    
+    var typeParameters = method.getTypeParameters();
+    assertThat(typeParameters.length, is(1));
+    
+    var typeParametersAsString = Arrays.toString(typeParameters);
+    assertThat(typeParametersAsString, containsString("T"));
+    ```
+* `getParameterTypes`
+    ```
+    Method method = findMethod("method");
+    
+    var parameters = method.getParameterTypes();
+    assertThat(parameters.length, is(3));
+    
+    var parametersAsString = Arrays.toString(parameters);
+    assertThat(parametersAsString, containsString("class java.lang.String"));
+    assertThat(parametersAsString, containsString("int"));
+    assertThat(parametersAsString, containsString("class java.lang.Object"));
+    ```
     
 # projects
 * https://github.com/mtumilowicz/java11-reflection-methods
