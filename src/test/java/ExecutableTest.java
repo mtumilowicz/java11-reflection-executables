@@ -16,7 +16,7 @@ public class ExecutableTest {
     
     @Test
     public void getParameters() {
-        Method method = findMethod("method");
+        var method = findMethod("method");
 
         var parameters = method.getParameters();
         assertThat(parameters.length, is(3));
@@ -29,7 +29,7 @@ public class ExecutableTest {
     
     @Test
     public void getExceptionTypes() {
-        Method method = findMethod("method");
+        var method = findMethod("method");
 
         var exceptionTypes = method.getExceptionTypes();
         assertThat(exceptionTypes.length, is(2));
@@ -41,7 +41,7 @@ public class ExecutableTest {
 
     @Test
     public void getModifiers() {
-        Method method = findMethod("method");
+        var method = findMethod("method");
 
         var parameters = method.getModifiers() & Modifier.methodModifiers();
         assertThat(Modifier.toString(parameters), is("public"));
@@ -49,7 +49,7 @@ public class ExecutableTest {
 
     @Test
     public void getTypeParameters() {
-        Method method = findMethod("method");
+        var method = findMethod("method");
 
         var typeParameters = method.getTypeParameters();
         assertThat(typeParameters.length, is(1));
@@ -60,7 +60,7 @@ public class ExecutableTest {
 
     @Test
     public void getParameterTypes() {
-        Method method = findMethod("method");
+        var method = findMethod("method");
 
         var parameters = method.getParameterTypes();
         assertThat(parameters.length, is(3));
