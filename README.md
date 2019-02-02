@@ -7,19 +7,21 @@ _Reference_: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/l
 * `Method` class
 * `Constructor` class
 * `Parameter` class (since java 8)
-* `Executable` - common superclass since java 8 
-(methods retrieving information common added/moved to this class)
-and the methods are quite self-explanatory:
-    * `Parameter[] getParameters()` - te parameter names are
+* `Executable` - common superclass of `Method` and `Constructor` 
+since java 8 (methods retrieving information common added/moved 
+to this class) and the methods are quite self-explanatory:
+    * `Parameter[] getParameters()` - actual parameter names are
     replaced by `arg0`, `arg1`, etc. by default; if we want to
     have actual parameter names we have to compile the source 
     code using the `-parameters` flag
     * `Class<?>[] getExceptionTypes()`
     * `int getModifiers()` - returns modifiers as int (https://github.com/mtumilowicz/java11-ORed-container)
-        * `int Modifier.methodModifiers()` - returns possible modifiers for class
-    * `TypeVariable<Method>[] getTypeParameters()` - types of
-    generic method
-    * `Class<?>[] getParameterTypes()` - types of parameters
+        * `int Modifier.methodModifiers()` - returns possible 
+        modifiers for a method
+    * `TypeVariable<Method>[] getTypeParameters()` - declared 
+    types of generic method
+    * `Class<?>[] getParameterTypes()` - types of parameters; note 
+    that generic parameter type is replaced by `Object`
     
 # project description
 We will test 4 mentioned above methods only for a given method
