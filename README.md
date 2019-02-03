@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/mtumilowicz/java11-reflection-executables.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-reflection-executables)
 
 # java11-reflection-executables
-Gathering basic info of `Executables` (`Method`, `Constructor`).
+Using reflection to retrieve information common to `Method` and `Constructor` (`Executable`).
 
 _Reference_: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Executable.html
 
